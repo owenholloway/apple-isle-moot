@@ -1,0 +1,26 @@
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: aim-uat-decomission-site
+  namespace: aim-uat
+  annotations:
+    kubernetes.io/ingress.class: traefik
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+    traefik.ingress.kubernetes.io/router.middlewares: default-redirect-https@kubernetescrd
+spec:
+  rules:
+  - host: "uat.appleislemoot.com.au"
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: decomission-site
+            port:
+              number: 80
+  tls:
+  - secretName: checkin-dev-tls
+    hosts:
+    - uat.appleislemoot.com.au
