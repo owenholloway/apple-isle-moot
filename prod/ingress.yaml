@@ -21,6 +21,6 @@ spec:
             port:
               number: 80
   tls:
-  - secretName: checkin-dev-tls
+  - secretName: registrations-tls-cert
     hosts:
     - registrations.appleislemoot.com.au
