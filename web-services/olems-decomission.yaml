@@ -22,9 +22,6 @@ spec:
             - containerPort: 80
               name: website
               protocol: TCP
-          envFrom:
-            - configMapRef:
-                name: decomission-site-config
           readinessProbe:
             failureThreshold: 3
             initialDelaySeconds: 30
