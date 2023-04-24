@@ -23,9 +23,9 @@ spec:
               name: website
               protocol: TCP
           readinessProbe:
-            failureThreshold: 3
-            initialDelaySeconds: 30
-            periodSeconds: 10
+            failureThreshold: 5
+            initialDelaySeconds: 2
+            periodSeconds: 2
             successThreshold: 1
             tcpSocket:
               port: 80
