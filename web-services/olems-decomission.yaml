@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: decomission-site
-          image: conreg.samon.lata/scouts-tasmania/aim/decomission-site/site:0.1.0
+          image: conreg.lanceolata.com.au/scouts-tasmania/aim/decomission-site/site:0.1.0
           imagePullPolicy: Always
           ports:
             - containerPort: 80
