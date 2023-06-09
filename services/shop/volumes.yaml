@@ -1,12 +1,25 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: erpnext-maria-pv-claim
+  name: wordpress-maria-pv-claim
   annotations:
     argocd.argoproj.io/sync-wave: "10"
 spec:
   accessModes:
     - ReadWriteOnce
+  resources:
+    requests:
+      storage: 10Gi
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: wordpress-pv-claim
+  annotations:
+    argocd.argoproj.io/sync-wave: "10"
+spec:
+  accessModes:
+    - ReadWriteMany
   resources:
     requests:
       storage: 10Gi
