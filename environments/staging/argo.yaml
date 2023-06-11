@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: aim-shop-staging
+  namespace: argocd
+spec:
+  destination:
+    name: ''
+    namespace: apple-isle-moot-staging
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: services/shop
+    repoURL: 'https://github.com/owenholloway/apple-isle-moot'
+    targetRevision: staging
+  sources: []
+  project: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

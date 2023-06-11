@@ -24,3 +24,16 @@ spec:
     requests:
       storage: 10Gi
 ---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: wordpress-ssh-keys
+  annotations:
+    argocd.argoproj.io/sync-wave: "10"
+spec:
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 10Mi
+---
